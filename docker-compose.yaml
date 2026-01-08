@@ -1,0 +1,23 @@
+services:
+  laravel-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"
+    volumes:
+      - .:/app
+    command: php artisan serve --host=0.0.0.0 --port=9000
+    depends_on:
+      - mysql_db
+
+  mysql_db:
+    image: mysql:8.0
+    container_name: mysql_db_1
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: crud
+      MYSQL_USER: devuser
+      MYSQL_PASSWORD: devpass
+    ports:
+      - "3309:3306"
