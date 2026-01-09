@@ -7,6 +7,8 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import { Navigate } from 'react-router-dom';
 import PrivateRoute from './componets/PrivateRoute';
+import ProductsList from "./pages/ProductsList";
+import CreateProductForm from "./pages/CreateProductForm";
 
 const root = ReactDOM.createRoot(document.getElementById('app'));
 
@@ -17,10 +19,18 @@ root.render(
                 <Route path="/" element={<Navigate to="/login" />} />
                 <Route path="/login" element={<Login />} />
                 <Route 
-                    path="/dashboard" 
+                    path="/products" 
                     element={
                         <PrivateRoute>
-                            <Dashboard />
+                            <ProductsList />
+                        </PrivateRoute>
+                    } 
+                />
+                <Route 
+                    path="/add-product" 
+                    element={
+                        <PrivateRoute>
+                            <CreateProductForm />
                         </PrivateRoute>
                     } 
                 />

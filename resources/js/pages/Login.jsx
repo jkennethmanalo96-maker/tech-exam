@@ -41,7 +41,7 @@ export default function Login() {
     
     useEffect(() => {
         if (token || localStorage.getItem("token")) {
-            navigate("/dashboard");
+            navigate("/products");
         }
     }, [token, navigate]);
 

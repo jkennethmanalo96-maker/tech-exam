@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createProduct, clearMessages } from "../store/slices/productsSlice";
+import { useNavigate } from "react-router-dom";
 import { Box, TextField, Button, Typography, Alert, CircularProgress } from "@mui/material";
 
 export default function CreateProductForm() {
   const dispatch = useDispatch();
   const { loading, error, success } = useSelector(state => state.products);
-
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [stock, setStock] = useState("");
@@ -28,10 +29,20 @@ export default function CreateProductForm() {
   }, [success, error, dispatch]);
 
   return (
-    <Box sx={{ mt: 4 }}>
+     <Box sx={{ mt: 4, maxWidth: 1000, mx: "auto" }}> 
       <Typography variant="h5" gutterBottom>
         Create Product
       </Typography>
+      
+      <Box sx={{ mt: 3 }}>
+      <Button
+        variant="contained"
+        color="primary"
+         onClick={() => navigate("/products")}
+        sx={{ mb: 3 }}
+      >
+        Back
+      </Button></Box>
 
       {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
       {success && <Alert severity="success" sx={{ mb: 2 }}>{success}</Alert>}
