@@ -1,0 +1,396 @@
+{
+  "info": {
+    "_postman_id": "1ee48b74-28d7-4a20-98f2-e41830a1bd1d",
+    "name": "Crud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Delete Products",
+          "id": "7a1a7f49-f87a-4731-9d31-dc564aeeaf8c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjcyOGFjZDg4Yjk2MTA2ZjU5ZmJhOTY1ZDQxZTViNWVkYTgyMmFjYjRhZjgwNjFlZTdjMWQxYmU0YjkyMTlmNzcxYWRiNjQ1YTgyMWFhY2IiLCJpYXQiOjE3Njc5MDExODcuMjQ3OTAxLCJuYmYiOjE3Njc5MDExODcuMjQ3OTAyLCJleHAiOjE3OTk0MzcxODcuMjQxODksInN1YiI6IjIiLCJzY29wZXMiOltdfQ.1i67i_GYytqueNvQnTFpkPrL0Y0hAlYSW1fAleakNLNzdyfhr120AnsKzCEL_fTpUUiRA5_VbEQe9rT7E9-ScFZTJkk1BwECqb94ECfC9BEaC2MPwrcflavlMxWKqJh4lwQTETXF-_fwXqdH9jgrdJtdA3sNbHF1LEfU7U2II5Ro28dUiyBkEUxDWZYOwswnd8SSheP30ACiLyoEt0DmlFaEB-bU2L6zsROySSskQirsMPcE5b2Gb3VunoLMhbCgMgsfGTVzWr2K-j8dhFYOcOGMZvS66mJvwoS-imI9r34fE3n6bWZrQ-yBJ4PQ_2VGk1A7AUwBd1Bzu1oeaYdfSuUPmeivvuwKPXeKG5Zqi8RpOeC2bui4m13mEsfK3kTDc_yNVzEg7bKkwmLE-t8_vJpyT5pMrXHhxIw9A0iX9XjtXb1QXnlifO8-i2hFRwb-97lKYS6YcG1yul_j76q2VGW6dmHeo8ySLKiSfbwamyfckY4ZhfAdozdSz767j8CxKKgRyVaOV__PIrvBfzZfz03MOIGOEmwo0_xy4FyNkTCljE66E4jAxr6GTPOUJyhmejxzNnkyxuyt_qeIF57W2rSOCQAOKxUdpVT_Vi67Gzc0iYFNOkuZoLHDeIFxUY4PFiX67X0tQeHfZGDf51RP1QmXnId2TuJ717XO2dNCFqs",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text",
+                "uuid": "cec8ced8-6f4b-4052-b8d1-6ae943c9247d"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text",
+                "uuid": "5daaf968-f1c8-4eb4-9ead-fbd99ee82b5c"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Laptop\",\n    \"price\": 11111,\n    \"stock\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:9000/api/products/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9000",
+              "path": [
+                "api",
+                "products",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Product List",
+          "id": "f5fbd4c9-f39b-4b9d-a160-7417373950a5",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjcyOGFjZDg4Yjk2MTA2ZjU5ZmJhOTY1ZDQxZTViNWVkYTgyMmFjYjRhZjgwNjFlZTdjMWQxYmU0YjkyMTlmNzcxYWRiNjQ1YTgyMWFhY2IiLCJpYXQiOjE3Njc5MDExODcuMjQ3OTAxLCJuYmYiOjE3Njc5MDExODcuMjQ3OTAyLCJleHAiOjE3OTk0MzcxODcuMjQxODksInN1YiI6IjIiLCJzY29wZXMiOltdfQ.1i67i_GYytqueNvQnTFpkPrL0Y0hAlYSW1fAleakNLNzdyfhr120AnsKzCEL_fTpUUiRA5_VbEQe9rT7E9-ScFZTJkk1BwECqb94ECfC9BEaC2MPwrcflavlMxWKqJh4lwQTETXF-_fwXqdH9jgrdJtdA3sNbHF1LEfU7U2II5Ro28dUiyBkEUxDWZYOwswnd8SSheP30ACiLyoEt0DmlFaEB-bU2L6zsROySSskQirsMPcE5b2Gb3VunoLMhbCgMgsfGTVzWr2K-j8dhFYOcOGMZvS66mJvwoS-imI9r34fE3n6bWZrQ-yBJ4PQ_2VGk1A7AUwBd1Bzu1oeaYdfSuUPmeivvuwKPXeKG5Zqi8RpOeC2bui4m13mEsfK3kTDc_yNVzEg7bKkwmLE-t8_vJpyT5pMrXHhxIw9A0iX9XjtXb1QXnlifO8-i2hFRwb-97lKYS6YcG1yul_j76q2VGW6dmHeo8ySLKiSfbwamyfckY4ZhfAdozdSz767j8CxKKgRyVaOV__PIrvBfzZfz03MOIGOEmwo0_xy4FyNkTCljE66E4jAxr6GTPOUJyhmejxzNnkyxuyt_qeIF57W2rSOCQAOKxUdpVT_Vi67Gzc0iYFNOkuZoLHDeIFxUY4PFiX67X0tQeHfZGDf51RP1QmXnId2TuJ717XO2dNCFqs",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text",
+                "uuid": "224c697e-8335-4731-a12b-140919d288fc"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text",
+                "uuid": "62c594b9-08d4-4e38-94f5-b0c1fab5abae"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:9000/api/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9000",
+              "path": [
+                "api",
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Edit Product",
+          "id": "8f4e3d3b-a827-4a7b-8b38-61c3e094aeca",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjcyOGFjZDg4Yjk2MTA2ZjU5ZmJhOTY1ZDQxZTViNWVkYTgyMmFjYjRhZjgwNjFlZTdjMWQxYmU0YjkyMTlmNzcxYWRiNjQ1YTgyMWFhY2IiLCJpYXQiOjE3Njc5MDExODcuMjQ3OTAxLCJuYmYiOjE3Njc5MDExODcuMjQ3OTAyLCJleHAiOjE3OTk0MzcxODcuMjQxODksInN1YiI6IjIiLCJzY29wZXMiOltdfQ.1i67i_GYytqueNvQnTFpkPrL0Y0hAlYSW1fAleakNLNzdyfhr120AnsKzCEL_fTpUUiRA5_VbEQe9rT7E9-ScFZTJkk1BwECqb94ECfC9BEaC2MPwrcflavlMxWKqJh4lwQTETXF-_fwXqdH9jgrdJtdA3sNbHF1LEfU7U2II5Ro28dUiyBkEUxDWZYOwswnd8SSheP30ACiLyoEt0DmlFaEB-bU2L6zsROySSskQirsMPcE5b2Gb3VunoLMhbCgMgsfGTVzWr2K-j8dhFYOcOGMZvS66mJvwoS-imI9r34fE3n6bWZrQ-yBJ4PQ_2VGk1A7AUwBd1Bzu1oeaYdfSuUPmeivvuwKPXeKG5Zqi8RpOeC2bui4m13mEsfK3kTDc_yNVzEg7bKkwmLE-t8_vJpyT5pMrXHhxIw9A0iX9XjtXb1QXnlifO8-i2hFRwb-97lKYS6YcG1yul_j76q2VGW6dmHeo8ySLKiSfbwamyfckY4ZhfAdozdSz767j8CxKKgRyVaOV__PIrvBfzZfz03MOIGOEmwo0_xy4FyNkTCljE66E4jAxr6GTPOUJyhmejxzNnkyxuyt_qeIF57W2rSOCQAOKxUdpVT_Vi67Gzc0iYFNOkuZoLHDeIFxUY4PFiX67X0tQeHfZGDf51RP1QmXnId2TuJ717XO2dNCFqs",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text",
+                "uuid": "c4a9a7ae-8851-452d-a7a1-9742550a400e"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text",
+                "uuid": "2f884316-118b-4055-b233-896cfbaf36f9"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"New Laptop\",\n    \"price\": 2500,\n    \"stock\": 6\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:9000/api/products/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9000",
+              "path": [
+                "api",
+                "products",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Insert Product",
+          "id": "6299dde4-ed6b-4c21-a07b-596fd1ec77eb",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjcyOGFjZDg4Yjk2MTA2ZjU5ZmJhOTY1ZDQxZTViNWVkYTgyMmFjYjRhZjgwNjFlZTdjMWQxYmU0YjkyMTlmNzcxYWRiNjQ1YTgyMWFhY2IiLCJpYXQiOjE3Njc5MDExODcuMjQ3OTAxLCJuYmYiOjE3Njc5MDExODcuMjQ3OTAyLCJleHAiOjE3OTk0MzcxODcuMjQxODksInN1YiI6IjIiLCJzY29wZXMiOltdfQ.1i67i_GYytqueNvQnTFpkPrL0Y0hAlYSW1fAleakNLNzdyfhr120AnsKzCEL_fTpUUiRA5_VbEQe9rT7E9-ScFZTJkk1BwECqb94ECfC9BEaC2MPwrcflavlMxWKqJh4lwQTETXF-_fwXqdH9jgrdJtdA3sNbHF1LEfU7U2II5Ro28dUiyBkEUxDWZYOwswnd8SSheP30ACiLyoEt0DmlFaEB-bU2L6zsROySSskQirsMPcE5b2Gb3VunoLMhbCgMgsfGTVzWr2K-j8dhFYOcOGMZvS66mJvwoS-imI9r34fE3n6bWZrQ-yBJ4PQ_2VGk1A7AUwBd1Bzu1oeaYdfSuUPmeivvuwKPXeKG5Zqi8RpOeC2bui4m13mEsfK3kTDc_yNVzEg7bKkwmLE-t8_vJpyT5pMrXHhxIw9A0iX9XjtXb1QXnlifO8-i2hFRwb-97lKYS6YcG1yul_j76q2VGW6dmHeo8ySLKiSfbwamyfckY4ZhfAdozdSz767j8CxKKgRyVaOV__PIrvBfzZfz03MOIGOEmwo0_xy4FyNkTCljE66E4jAxr6GTPOUJyhmejxzNnkyxuyt_qeIF57W2rSOCQAOKxUdpVT_Vi67Gzc0iYFNOkuZoLHDeIFxUY4PFiX67X0tQeHfZGDf51RP1QmXnId2TuJ717XO2dNCFqs",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text",
+                "uuid": "65c93a8f-6ef8-475f-b093-d2a6b9757721"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text",
+                "uuid": "26bcd0b8-fff6-49d8-8248-a5daa0dc7088"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"CPU\",\n    \"price\": 1500,\n    \"stock\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:9000/api/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9000",
+              "path": [
+                "api",
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "View Product",
+          "id": "dcabfb26-0c3b-44c3-a324-6f5a601dcf9e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjcyOGFjZDg4Yjk2MTA2ZjU5ZmJhOTY1ZDQxZTViNWVkYTgyMmFjYjRhZjgwNjFlZTdjMWQxYmU0YjkyMTlmNzcxYWRiNjQ1YTgyMWFhY2IiLCJpYXQiOjE3Njc5MDExODcuMjQ3OTAxLCJuYmYiOjE3Njc5MDExODcuMjQ3OTAyLCJleHAiOjE3OTk0MzcxODcuMjQxODksInN1YiI6IjIiLCJzY29wZXMiOltdfQ.1i67i_GYytqueNvQnTFpkPrL0Y0hAlYSW1fAleakNLNzdyfhr120AnsKzCEL_fTpUUiRA5_VbEQe9rT7E9-ScFZTJkk1BwECqb94ECfC9BEaC2MPwrcflavlMxWKqJh4lwQTETXF-_fwXqdH9jgrdJtdA3sNbHF1LEfU7U2II5Ro28dUiyBkEUxDWZYOwswnd8SSheP30ACiLyoEt0DmlFaEB-bU2L6zsROySSskQirsMPcE5b2Gb3VunoLMhbCgMgsfGTVzWr2K-j8dhFYOcOGMZvS66mJvwoS-imI9r34fE3n6bWZrQ-yBJ4PQ_2VGk1A7AUwBd1Bzu1oeaYdfSuUPmeivvuwKPXeKG5Zqi8RpOeC2bui4m13mEsfK3kTDc_yNVzEg7bKkwmLE-t8_vJpyT5pMrXHhxIw9A0iX9XjtXb1QXnlifO8-i2hFRwb-97lKYS6YcG1yul_j76q2VGW6dmHeo8ySLKiSfbwamyfckY4ZhfAdozdSz767j8CxKKgRyVaOV__PIrvBfzZfz03MOIGOEmwo0_xy4FyNkTCljE66E4jAxr6GTPOUJyhmejxzNnkyxuyt_qeIF57W2rSOCQAOKxUdpVT_Vi67Gzc0iYFNOkuZoLHDeIFxUY4PFiX67X0tQeHfZGDf51RP1QmXnId2TuJ717XO2dNCFqs",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text",
+                "uuid": "79d7462b-6520-4bb5-b50a-f69233092a19"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text",
+                "uuid": "f7eebba5-8ccd-40d7-9acb-1a105b6b0dd5"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:9000/api/products/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9000",
+              "path": [
+                "api",
+                "products",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "8ec8d85f-a2c6-43e4-9b91-9d877d3d6fe8"
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Registertion",
+          "id": "978acccd-85f5-4598-bf48-3b981a134393",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text",
+                "uuid": "354f723f-406d-462e-a619-b5cbeee2321f"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text",
+                "uuid": "dab8d698-4d38-4781-b3e5-f9e661d89aa2"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"UserName\",\n    \"email\": \"user@example.com\",\n    \"password\": \"secret123\",\n    \"password_confirmation\": \"secret123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:9000/api/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9000",
+              "path": [
+                "api",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "id": "acc50f22-9e2a-4fc4-a4d8-2b972076fc6d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text",
+                "uuid": "178626be-bb72-407e-a352-db60d50b1433"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text",
+                "uuid": "821fadad-5745-4bcc-8369-c14c08611aef"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"user@example.com\",\n    \"password\": \"secret123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:9000/api/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9000",
+              "path": [
+                "api",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "18da7727-fef6-4f2c-b3cb-41339f317f8c"
+    }
+  ]
+}
